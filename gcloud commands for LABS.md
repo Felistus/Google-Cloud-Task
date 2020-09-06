@@ -35,6 +35,7 @@ curl http://my-vm-1/
 
 
 2. # Getting Started with Cloud Storage and Cloud SQL
+
 ## export my zone
 ```
 export MY_ZONE=us-central1-b
@@ -68,7 +69,7 @@ gcloud deployment-manager deployments create my-deployment --config mydeploy.yam
 nano mydeploy.yaml
 ```
 ### configs to add:
--  ```
+```
  - name: default-allow-http
    type: compute.v1.firewall
   properties:
@@ -80,12 +81,13 @@ nano mydeploy.yaml
 ```
 - add under the metadata, **value** property
 ```
-apt-get update; apt-get install apache2 php php-mysql -y; service apache2 restart
+  apt-get update; apt-get install apache2 php php-mysql -y; service apache2 restart
 ```
 **Ctrl+0 and Enter** to save; **Ctrl+X** to exit
+
 ## update my deployment
 ```
-gcloud deployment-manager deployments update my-deployment --config mydeploy.yaml
+  gcloud deployment-manager deployments update my-deployment --config mydeploy.yaml
 ```
 ## create a cloud storage bucket
 ```
@@ -133,7 +135,7 @@ sudo nano index.php
 sudo service apache2 restart
 ```
 - test site using vm external IP
-*35.226.246.29/index.php*
+    *35.226.246.29/index.php*
 - reedit index.php and add SQL IP and Password
 ```
 sudo nano index.php
@@ -159,9 +161,7 @@ sudo nano index.php
 ```
 sudo service apache2 restart
 ```
-- test your page again using the VN external IP address/index.php.
-eg: 35.192.208.2/index.php
-
+- test your page again using the VN external IP address/index.php. eg: 35.192.208.2/index.php
 
 
 3. # Getting Started with App Engine
@@ -197,7 +197,7 @@ sudo apt-get update
 ```
 sudo apt-get install virtualenv
 ```
-**If prompted [Y/n], press Y and then Enter.**
+    **If prompted [Y/n], press Y and then Enter.**
 ```
 virtualenv -p python3 venv
 ```
@@ -207,7 +207,7 @@ source venv/bin/activate
 ```
 - navigate to your project directory and install dependencies
 ```
-pip install  -r requirements.txt
+  pip install  -r requirements.txt
 ```
 - run the application
 ```
@@ -215,6 +215,7 @@ python main.py
 ```
 - in Cloud Shell, click Web preview (Web Preview) > Preview on port 8080 to preview the application.
 - abort test using *Ctrl+C*
+
 
 ## deploy and run Hello World on App Engine
 - navigate to the source directory
@@ -229,6 +230,6 @@ gcloud app deploy
 ```
 gcloud app browse
 ```
-**Disable app engine application**
+    **Disable app engine application**
 
-**END**
+    **END**
